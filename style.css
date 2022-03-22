@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+html {
+  font-size: 15px;
+}
+
+button {
+  cursor: pointer;
+}
+
+p {
+  color: #7c8798;
+  line-height: 1.6rem;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Overpass", sans-serif;
+  background-color: #1a1a1a;
+}
+
+main {
+  background: linear-gradient(0, #121417, #252d37 150%);
+  border-radius: 2rem;
+  width: 28rem;
+  height: 28rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+main > * {
+  overflow: hidden;
+  transition: 0.5s;
+  width: 0;
+  padding: 0;
+  opacity: 0;
+}
+
+.inputContainer {
+  transform: scale(50);
+}
+.inputContainer > img {
+  background-color: #252d37;
+  padding: 1rem;
+  border-radius: 50%;
+}
+.inputContainer > h1 {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.ratings {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.ratings > button {
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #252d37;
+  color: #7c8798;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Overpass", sans-serif;
+  transition: 0.2s;
+}
+.ratings > button:hover {
+  color: white;
+  background-color: #7c8798;
+}
+.ratings > button.checked, .ratings > button:active {
+  color: white;
+  background-color: #fb7413;
+  box-shadow: inset 0.1rem 0.1rem 0.2em rgba(0, 0, 0, 0.5);
+  transform: translateY(0.1em);
+  transition: 0s;
+}
+.ratings > button.checked {
+  box-shadow: none;
+  transform: translateY(-0.2em);
+  transition: 0.2s;
+}
+
+.submit {
+  margin-top: 2rem;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 999rem;
+  background: linear-gradient(90deg, #fb7413, #e26003);
+  background-color: #fb7413;
+  color: white;
+  font-family: "Overpass", sans-serif;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  transition: 0.2s;
+}
+.submit:hover {
+  background: white;
+  color: #fb7413;
+}
+.submit:active {
+  box-shadow: inset 0.1rem 0.1rem 0.2em rgba(0, 0, 0, 0.5);
+  transform: translateY(0.1em);
+  transition: 0s;
+}
+
+.errorMessage {
+  padding-right: 1rem;
+  text-align: right;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: red;
+  opacity: 0;
+}
+
+.showError {
+  animation: error 0.2s forwards;
+  opacity: 1;
+}
+
+@keyframes error {
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100% {
+    padding-right: 0.5rem;
+  }
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+    padding-right: 1rem;
+  }
+}
+.outputContainer {
+  transform: scale(0.02);
+  width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.outputContainer > img {
+  object-fit: contain;
+  height: 30%;
+  margin: 1rem 0;
+}
+.outputContainer > * {
+  text-align: center;
+}
+.outputContainer > h2 {
+  font-size: 1rem;
+  color: #fb7413;
+  font-weight: 400;
+  background-color: #252d37;
+  margin: auto;
+  padding: 0.4em 1.4em;
+  padding-top: 0.7em;
+  border-radius: 999rem;
+}
+.outputContainer > h1 {
+  margin-bottom: 0;
+}
+
+.open {
+  transform: scale(1);
+  width: 100%;
+  opacity: 1;
+  padding: 2.5rem;
+}
+
+/*# sourceMappingURL=style.css.map */

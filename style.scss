@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+$overpass: "Overpass", sans-serif;
+
+$orange400: hsl(25, 97%, 53%);
+$orange450: hsl(25, 97%, 45%);
+
+$white: hsl(0, 0%, 100%);
+$gray200: hsl(217, 12%, 63%);
+$gray400: hsl(216, 12%, 54%);
+$gray600: hsl(213, 19%, 18%);
+$gray800: hsl(216, 12%, 8%);
+
+$containerPadding: 2.5rem;
+
+html {font-size: 15px;}
+
+button {
+	cursor: pointer;
+}
+
+p {
+	color: $gray400;
+	line-height: 1.6rem;
+}
+
+body {
+	margin: 0;
+	display: grid;
+	place-items: center;
+	width: 100vw;
+	height: 100vh;
+	font-family: "Overpass", sans-serif;
+	background-color: hsl(0 0 10);
+}
+
+main {
+	background: linear-gradient(0, $gray800, $gray600 150%);
+	border-radius: 2rem;
+	width: 28rem;
+	height: 28rem;
+	color: $white;
+	display: flex;
+	justify-content: space-between;
+	overflow: hidden;
+
+	> * {
+		overflow: hidden;
+		transition: 0.5s;
+		width: 0;
+		padding: 0;
+		opacity: 0;
+	}
+}
+
+.inputContainer {
+	transform: scale(50);
+
+	> img {
+		background-color: $gray600;
+		padding: 1rem;
+		border-radius: 50%;
+	}
+
+	> h1 {
+		font-size: 2rem;
+		margin-bottom: 0;
+	}
+}
+
+.ratings {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+
+	> button {
+		border: none;
+		border-radius: 50%;
+		width: 3.5rem;
+		height: 3.5rem;
+		background-color: $gray600;
+		color: $gray400;
+		font-size: 1rem;
+		font-weight: 700;
+		font-family: $overpass;
+		transition: 0.2s;
+
+		&:hover {
+			color: $white;
+			background-color: $gray400;
+		}
+
+		&.checked,
+		&:active {
+			color: $white;
+			background-color: $orange400;
+			box-shadow: inset 0.1rem 0.1rem 0.2em hsla(0 0 0 / 50%);
+			transform: translateY(0.1em);
+			transition: 0s;
+		}
+
+		&.checked {
+			box-shadow: none;
+			transform: translateY(-0.2em);
+			transition: 0.2s;
+		}
+	}
+}
+
+.submit {
+	margin-top: 2rem;
+	width: 100%;
+	padding: 1rem;
+	border-radius: 999rem;
+	background: linear-gradient(90deg, $orange400, $orange450);
+	background-color: $orange400;
+	color: $white;
+	font-family: $overpass;
+	border: none;
+	text-transform: uppercase;
+	font-size: 1rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	transition: 0.2s;
+
+	&:hover {
+		background: $white;
+		color: $orange400;
+	}
+
+	&:active {
+		box-shadow: inset 0.1rem 0.1rem 0.2em hsla(0 0 0 / 50%);
+		transform: translateY(0.1em);
+		transition: 0s;
+	}
+}
+
+.errorMessage {
+	padding-right: 1rem;
+	text-align: right;
+	font-size: 0.8rem;
+	font-weight: 700;
+	color: red;
+	opacity: 0;
+}
+
+.showError {
+	animation: error 0.2s forwards;
+	opacity: 1;
+}
+
+@keyframes error {
+	0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%{
+		padding-right: 0.5rem;
+	}
+	5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95% {
+		padding-right: 1rem;
+	}
+}
+
+.outputContainer {
+	transform: scale(0.02);
+	width: 0;
+	display: flex;
+	flex-direction: column;
+
+	> img {
+		object-fit: contain;
+		height: 30%;
+		margin: 1rem 0;
+	}
+
+	> * {
+		text-align: center;
+	}
+
+	> h2 {
+		font-size: 1rem;
+		color: $orange400;
+		font-weight: 400;
+		background-color: $gray600;
+		margin: auto;
+		padding: 0.4em 1.4em;
+		padding-top: 0.7em;
+		border-radius: 999rem;
+	}
+
+	> h1 {
+		margin-bottom: 0;
+	}
+}
+
+
+.open {
+	transform: scale(1);
+	width: 100%;
+	opacity: 1;
+	padding: $containerPadding;
+}
